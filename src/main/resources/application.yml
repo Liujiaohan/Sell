@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: qweasd789
+    url: jdbc:mysql://127.0.0.1:3306/dbsell
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  context-path: /sell
