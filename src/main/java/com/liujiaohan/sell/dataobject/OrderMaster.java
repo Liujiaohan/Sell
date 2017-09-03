@@ -4,11 +4,9 @@ import com.liujiaohan.sell.enums.OrderStatusEnum;
 import com.liujiaohan.sell.enums.PayStatusEnum;
 import lombok.Data;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
-import java.sql.Date;
 
 @Entity
 @Data
@@ -23,20 +21,13 @@ public class OrderMaster {
 
     private String buyerAddress;
 
-    private String buyerOpenId;
+    private String buyerOpenid;
 
     private BigDecimal orderAmount;
 
-    private Integer orderStatus;
+    private Integer orderStatus=OrderStatusEnum.NewOrder.getCode();
 
-    private Integer payStatus;
-
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",insertable = false,updatable = false)
-    private Date createDate;
-
-    @Column(columnDefinition = "TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP",nullable = true,
-            insertable = false,updatable = false)
-    private Date updateDate;
+    private Integer payStatus=PayStatusEnum.WAIT.getCode();
 
     public OrderMaster() {
     }

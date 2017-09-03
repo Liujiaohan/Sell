@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class ProductInfoServiceImplTest {
     @Autowired
-    private ProductInfoService productInfoService;
+    private ProductInfoServiceImpl productInfoService;
 
     @Test
     public void findAll() throws Exception {

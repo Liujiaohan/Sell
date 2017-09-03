@@ -8,6 +8,7 @@ public enum OrderStatusEnum {
     Completed(1,"完结"),
     Cancel(2,"取消");
 
+
     private Integer code;
     private String message;
 

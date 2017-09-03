@@ -15,7 +15,7 @@ public class ProductCategoryRepositoryTest {
 
     @Autowired
     private ProductCategoryRepository productCategoryRepository;
-+
+
     @Test
     public void findOneTest(){
         ProductCategory productCategory=productCategoryRepository.findOne(1);
@@ -25,8 +25,16 @@ public class ProductCategoryRepositoryTest {
     @Test
     public void saveTest(){
         ProductCategory productCategory=new ProductCategory();
-        productCategory.setCategoryName("大吃");
-        productCategory.setCategoryType(5);
+        productCategory.setCategoryName("甜品");
+        productCategory.setCategoryType(3);
         productCategoryRepository.save(productCategory);
+        ProductCategory productCategory1=new ProductCategory();
+        productCategory1.setCategoryName("小吃");
+        productCategory1.setCategoryType(1);
+        productCategoryRepository.save(productCategory1);
+        ProductCategory productCategory2=new ProductCategory();
+        productCategory2.setCategoryName("饮料");
+        productCategory2.setCategoryType(2);
+        productCategoryRepository.save(productCategory2);
     }
 }

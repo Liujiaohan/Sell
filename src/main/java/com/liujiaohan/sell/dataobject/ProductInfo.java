@@ -22,12 +22,6 @@ public class ProductInfo {
     private Integer categoryType;
     /* 0正常1下架*/
     private Integer productStatus;
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",insertable = false,updatable = false)
-    private Date createDate;
-
-    @Column(columnDefinition = "TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP",nullable = true,
-            insertable = false,updatable = false)
-    private Date updateDate;
 
     public ProductInfo() {
     }

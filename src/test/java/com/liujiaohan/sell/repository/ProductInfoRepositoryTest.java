@@ -18,23 +18,49 @@ public class ProductInfoRepositoryTest {
 
     @Test
     public void findByProductStatus() throws Exception {
-        Assert.assertNotNull(productInfoRepository.findByProductStatus(0));
+  //      Assert.assertNotNull(productInfoRepository.findByProductStatus(0));
     }
 
     @Test
     public void saveTest(){
         ProductInfo productInfo=new ProductInfo();
 
-        productInfo.setProductId("545");
-        productInfo.setCategoryType(1);
+        productInfo.setProductId("321");
+        productInfo.setCategoryType(2);
         productInfo.setProductDescription("好吃的");
         productInfo.setProductIcon("www.baidu.com");
-        productInfo.setProductName("鸡蛋");
+        productInfo.setProductName("可乐");
         productInfo.setProductPrice(new BigDecimal(3.2));
         productInfo.setProductStatus(1);
         productInfo.setProductStock(100);
 
         ProductInfo result=productInfoRepository.save(productInfo);
-        Assert.assertNotNull(result);
+
+        ProductInfo productInfo1=new ProductInfo();
+
+        productInfo1.setProductId("123");
+        productInfo1.setCategoryType(1);
+        productInfo1.setProductDescription("好吃的");
+        productInfo1.setProductIcon("www.baidu.com");
+        productInfo1.setProductName("蛋炒饭");
+        productInfo1.setProductPrice(new BigDecimal(3.2));
+        productInfo1.setProductStatus(1);
+        productInfo1.setProductStock(100);
+
+        ProductInfo result1=productInfoRepository.save(productInfo1);
+
+        ProductInfo productInfo2=new ProductInfo();
+
+        productInfo2.setProductId("231");
+        productInfo2.setCategoryType(3);
+        productInfo2.setProductDescription("好吃的");
+        productInfo2.setProductIcon("www.baidu.com");
+        productInfo2.setProductName("雪糕");
+        productInfo2.setProductPrice(new BigDecimal(3.2));
+        productInfo2.setProductStatus(1);
+        productInfo2.setProductStock(100);
+
+        ProductInfo result2=productInfoRepository.save(productInfo2);
+        Assert.assertNotNull(result2);
     }
 }

@@ -26,13 +26,6 @@ public class OrderDetail {
 
     private String productIcon;
 
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",insertable = false,updatable = false)
-    private Date createDate;
-
-    @Column(columnDefinition = "TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP",nullable = true,
-            insertable = false,updatable = false)
-    private Date updateDate;
-
     public OrderDetail() {
     }
 }
