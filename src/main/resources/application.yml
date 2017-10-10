@@ -8,5 +8,15 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+  jackson:
+    default-property-inclusion: non_null
 server:
   context-path: /sell
+
+wechat:
+  mpAppId: wx742019518dea57a4
+  mpAppSecret: wx742019518dea57a4
+  mchId: 123456
+  mchkey: dhfjjkahdfjk
+  keyPath: /var/weixin_cert/h5.p12
+

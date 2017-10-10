@@ -21,4 +21,7 @@ public interface OrderService {
 
     /**完结订单**/
     OrderDTO complete(OrderDTO orderDTO);
+
+    /**查询所有订单*/
+    Page<OrderDTO> findList(Pageable pageable);
 }

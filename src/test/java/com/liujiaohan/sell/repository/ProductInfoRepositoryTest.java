@@ -31,7 +31,7 @@ public class ProductInfoRepositoryTest {
         productInfo.setProductIcon("www.baidu.com");
         productInfo.setProductName("可乐");
         productInfo.setProductPrice(new BigDecimal(3.2));
-        productInfo.setProductStatus(1);
+        productInfo.setProductStatus(0);
         productInfo.setProductStock(100);
 
         ProductInfo result=productInfoRepository.save(productInfo);
@@ -44,7 +44,7 @@ public class ProductInfoRepositoryTest {
         productInfo1.setProductIcon("www.baidu.com");
         productInfo1.setProductName("蛋炒饭");
         productInfo1.setProductPrice(new BigDecimal(3.2));
-        productInfo1.setProductStatus(1);
+        productInfo1.setProductStatus(0);
         productInfo1.setProductStock(100);
 
         ProductInfo result1=productInfoRepository.save(productInfo1);
@@ -57,7 +57,7 @@ public class ProductInfoRepositoryTest {
         productInfo2.setProductIcon("www.baidu.com");
         productInfo2.setProductName("雪糕");
         productInfo2.setProductPrice(new BigDecimal(3.2));
-        productInfo2.setProductStatus(1);
+        productInfo2.setProductStatus(0);
         productInfo2.setProductStock(100);
 
         ProductInfo result2=productInfoRepository.save(productInfo2);

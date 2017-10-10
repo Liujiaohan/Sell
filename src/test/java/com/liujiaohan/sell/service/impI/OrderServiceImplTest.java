@@ -3,6 +3,7 @@ package com.liujiaohan.sell.service.impI;
 import com.liujiaohan.sell.dataobject.OrderDetail;
 import com.liujiaohan.sell.dto.OrderDTO;
 import com.liujiaohan.sell.enums.OrderStatusEnum;
+import com.liujiaohan.sell.enums.PayStatusEnum;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -57,7 +58,7 @@ public class OrderServiceImplTest {
     @Test
     public void findList() throws Exception {
         PageRequest request=new PageRequest(0,2);
-        Page<OrderDTO> orderDTOPage=orderService.findList(buyerOpenId,request);
+        Page<OrderDTO> orderDTOPage=orderService.findList(request);
         Assert.assertNotEquals(0,orderDTOPage.getTotalElements());
     }
 
@@ -70,10 +71,16 @@ public class OrderServiceImplTest {
 
     @Test
     public void paid() throws Exception {
+        OrderDTO orderDTO=orderService.findOne(ORDERID);
+        orderDTO=orderService.paid(orderDTO);
+        Assert.assertEquals(PayStatusEnum.PAIED.getCode(),orderDTO.getPayStatus());
     }
 
     @Test
     public void complete() throws Exception {
+        OrderDTO orderDTO=orderService.findOne(ORDERID);
+        orderDTO=orderService.complete(orderDTO);
+        Assert.assertEquals(OrderStatusEnum.Completed.getCode(),orderDTO.getOrderStatus());
     }
 
 }
